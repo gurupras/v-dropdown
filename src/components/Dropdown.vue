@@ -3,7 +3,7 @@
   <slot name="dropdown"></slot>
   <div class="dropdown-menu" role="menu">
     <slot name="menu">
-      <transition name="slide" @after-enter="onAfterEnter" @enter-cancelled="onEnterCancelled" @before-leave="onBeforeLeave" @before-enter="onBeforeEnter" @after-leave="onAfterLeave">
+      <transition name="slide" @after-enter="onAfterEnter" @enter-cancelled="onCancelled" @before-leave="onBeforeLeave" @before-enter="onBeforeEnter" @after-leave="onAfterLeave">
         <div class="dropdown-content" ref="content" v-if="opened">
           <slot name="content"></slot>
         </div>
@@ -96,23 +96,23 @@ export default defineComponent({
       this.$emit('update:show', false)
       this.opened = false
     },
-    onAfterEnter () {
-      this.fullyVisible = true
+    onBeforeEnter () {
       this.fullyHidden = false
     },
-    onEnterCancelled () {
-      this.fullyVisible = false
+    onAfterEnter () {
+      this.fullyVisible = true
       this.fullyHidden = false
     },
     onBeforeLeave () {
       this.fullyVisible = false
     },
-    onBeforeEnter () {
-      this.fullyHidden = false
-    },
     onAfterLeave () {
       this.fullyVisible = false
       this.fullyHidden = true
+    },
+    onCancelled () {
+      this.fullyVisible = false
+      this.fullyHidden = false
     }
   },
   mounted () {
