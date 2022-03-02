@@ -46,6 +46,11 @@
       "optional": true
     }
   },
+  "files": [
+    "src/components",
+    "src/style",
+    "dist"
+  ],
   "exports": {
     ".": "./dist/index.es.js",
     "./style.css": "./dist/style.css"
