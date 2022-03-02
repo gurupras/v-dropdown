@@ -1,5 +1,5 @@
 <template>
-<div class="dropdown" :class="{'is-active': opened, 'fully-visible': fullyVisible && !fullyHidden}">
+<div class="dropdown" :class="{'is-active': opened, 'fully-visible': fullyVisible && !fullyHidden}" :style="styleBindings">
   <slot name="dropdown"></slot>
   <div class="dropdown-menu" role="menu">
     <slot name="menu">
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue-demi'
+import { defineComponent, isVue2 } from 'vue-demi'
 
 export default defineComponent({
   props: {
@@ -67,6 +67,16 @@ export default defineComponent({
     leaveDuration () {
       const leaveDurationMS = Math.max(0, 0.9 * this.transitionDuration)
       return `${leaveDurationMS}ms`
+    },
+    styleBindings () {
+      if (isVue2) {
+        return {
+          '--enter-duration': this.enterDuration,
+          '--leave-duration': this.leaveDuration,
+          '--max-height': this.maxHeight
+        }
+      }
+      return undefined
     }
   },
   methods: {
