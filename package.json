@@ -1,7 +1,8 @@
 {
   "name": "@gurupras/v-dropdown",
   "version": "0.1.2",
-  "main": "./dist/index.umd.js",
+  "main": "./dist/dropdown.umd.js",
+  "module": "./dist/dropdown.es.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -53,7 +54,8 @@
     "dist"
   ],
   "exports": {
-    ".": "./dist/index.es.js",
-    "./style.css": "./dist/style.css"
+    ".": "./dist/dropdown.es.js",
+    "./style.css": "./dist/style.css",
+    "./src/components/Dropdown.vue": "./src/components/Dropdown.vue"
   }
 }
