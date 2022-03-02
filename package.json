@@ -1,0 +1,53 @@
+{
+  "name": "@gurupras/v-dropdown",
+  "version": "0.1.0",
+  "main": "./dist/index.umd.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "vue-demi": "^0.12.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@iconify/json": "^1.1.427",
+    "@storybook/addon-actions": "^6.5.0-alpha.44",
+    "@storybook/addon-essentials": "^6.5.0-alpha.44",
+    "@storybook/addon-links": "^6.5.0-alpha.44",
+    "@storybook/vue3": "^6.5.0-alpha.44",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "babel-loader": "^8.2.3",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-vue": "^8.0.3",
+    "sass": "^1.43.4",
+    "storybook-builder-vite": "^0.1.17",
+    "unplugin-icons": "^0.12.18",
+    "unplugin-vue-components": "^0.17.2",
+    "vue": "^3.2.16",
+    "vite": "^2.6.4",
+    "bulma": "^0.9.3",
+    "vue-loader": "^16.8.3"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0",
+    "bulma": "^0.9.3"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "exports": {
+    ".": "./dist/index.es.js",
+    "./style.css": "./dist/style.css"
+  }
+}
