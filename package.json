@@ -7,7 +7,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "vue-demi": "^0.12.1"
